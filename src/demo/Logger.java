@@ -29,6 +29,7 @@ public class Logger {
 			Path p = Paths.get(fileName);
 			OutputStream out = new BufferedOutputStream(Files.newOutputStream(p, StandardOpenOption.APPEND));
 			out.write(toWrite.getBytes());
+			out.close();
 			return true;
 		} else {
 			File f = new File(fileName);
